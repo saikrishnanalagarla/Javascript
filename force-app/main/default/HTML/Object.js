@@ -5,10 +5,10 @@ let person = {
 }
 
 //JSON.Stringify object to string
-//console.log(JSON.stringify(person));
+console.log(JSON.stringify(person));
 
 // string to object
-//console.log(JSON.parse(person));
+console.log(JSON.parse(person));
 
 //adding new element
 person.address = 'Hyderabad';
