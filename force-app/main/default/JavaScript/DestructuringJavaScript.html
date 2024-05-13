@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const names = ['rama', 'bhemma', 'krishna', 'arjuna'];
+
+        // Destructuring the first two elements of the array
+        const [first, second] = names;
+        console.log(first, second); // Output: rama bhemma
+
+        // Destructuring with skipped elements
+        const [a, , c] = names;
+        console.log(a, c); // Output: rama krishna
+        const [, , , d] = names;
+        console.log(d);  // Output: arjuna
+
+        // Destructuring with rest parameter to get the rest of the elements
+        const [firstname, secondname, ...remainingelements] = names; //x ,y remaing are in array
+        console.log(firstname, secondname, remainingelements); // Output: rama bhemma ['krishna', 'arjuna']
+
+
+        //Destructuring
+        //property names does matter , sequence does't matter
+        const person = {
+            name: 'Alice',
+            age: 25,
+            location: 'Wonderland'
+        };
+        
+        // Destructuring specific properties from the object
+        const { name, age } = person;
+        console.log(name, age); // Output: Alice 25
+        
+        // Destructuring with a different variable name
+        const { name: personName, location: personLocation } = person;
+        console.log(personName, personLocation); // Output: Alice Wonderland
+        
+        // Destructuring with default values (useful when the value may not exist)
+        const { phone = 'No phone number available' } = person;
+        console.log(phone); // Output: No phone number available
+        
+
+    </script>
+    
+</body>
+</html>
