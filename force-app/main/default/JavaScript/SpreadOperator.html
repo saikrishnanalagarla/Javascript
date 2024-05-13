@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread Operator Examples</title>
+</head>
+<body>
+    <h1>Understanding the Spread Operator in JavaScript</h1>
+    <h2>Open your Console to see the output</h2>
+    <script>
+        // Combining two arrays into one
+        let arr1 = [1, 2, 3, 4];
+        let arr2 = [5, 6, 7, 8];
+        let combinedArray = [...arr1, ...arr2];
+        console.log('Combined Array:', combinedArray);
+
+        // Adding elements at the front and back of an array
+        arr2 = [9, 10, 11, 12, ...arr2, 13, 14, 15];
+        console.log('Expanded Array:', arr2);
+
+        // Spreading a string into an array of characters
+        let name = 'my name is Sai';
+        console.log('Original String:', name);
+        console.log('Spread String:', [...name]);
+
+        // Combining objects; note obj2 properties will overwrite obj1 if they share the same keys
+        let obj1 = { name: 'Sai', age: 20 };
+        let obj2 = { name: 'Ramana', age: 22 };
+        let combinedObj = { ...obj1, ...obj2 };
+        console.log('Combined Object:', combinedObj);
+
+        // Correct way to copy arrays to avoid reference issues
+        let fruits = ['banana', 'apple', 'orange'];
+        let copiedFruits = [...fruits];
+        copiedFruits.push('papaya'); // Modifying the copied array
+        console.log('Copied Fruits:', copiedFruits);
+        console.log('Original Fruits:', fruits); // Original array remains unaffected
+    </script>
+</body>
+</html>
