@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Functions</h1>
+    <script>
+        //Regular Function
+        function greet(name) {
+            return `Hello, ${name}!`;
+        }
+        
+        console.log(greet("Alice")); // Outputs: Hello, Alice!
+        //2.Function Expressions
+        const square = function(number) {
+            return number * number;
+        };
+        
+        console.log(square(4)); // Outputs: 16
+        //3.Arrow Functions
+        const add = (a, b) => a + b;
+        console.log(add(5, 3)); // Outputs: 8
+
+        //4.Async Functions
+        async function fetchData() {
+            const response = await fetch('https://api.example.com/data');
+            const data = await response.json();
+            console.log(data);
+        }
+        fetchData();
+        //5. Constructor Functions
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        } 
+        const myCar = new Car('Honda', 'Accord', 1998);
+        console.log(myCar.model); // Outputs: Accord
+        //6.Callback Function
+        function processData(callback) {
+            // simulate a delay
+            setTimeout(() => {
+                callback('data processed');
+            }, 1000);
+        }
+        processData((result) => {
+            console.log(result); // Outputs: data processed
+        });
+
+        function hello(name , callme){
+            console.log('hello' + name);
+            callme();
+        }
+        function hai(){
+            console.log('hai function');
+        }
+        function bye(){
+            console.log(' bye function');
+        }
+
+        
+        hello('krishna', hai);// hello krishna
+        hello('sai', bye);// bye function
+        
+        
+
+    </script>
+</body>
+</html>
