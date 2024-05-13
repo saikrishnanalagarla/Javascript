@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Events Example</title>
+</head>
+<body>
+    <button id="eventTrigger">Trigger Event</button>
+    <p id="status">No event has been triggered yet.</p>
+
+    <p>Enter the number:</p>
+    <input type="text" onchange="changeHandler(event)">
+
+    <script>
+        const button = document.getElementById('eventTrigger');
+        const statusParagraph = document.getElementById('status');
+
+        // Create a custom event
+        const customEvent = new CustomEvent('customEvent', {
+            detail: {
+                message: 'Custom event triggered'
+            }
+        });
+
+        // Event listener for the custom event
+        button.addEventListener('customEvent', function(e) {
+            statusParagraph.textContent = e.detail.message; // Access the data passed in the detail
+        });
+
+        // Dispatch the event when the button is clicked
+        button.addEventListener('click', function() {
+            button.dispatchEvent(customEvent);
+        });
+
+        function changeHandler(event){
+            console.log(event.target.value);
+            let value = event.target.value;
+            if(value==10){
+                //creating custom event
+               const myEvent = new CustomEvent('eventten' ,{
+                    detail :{
+                        message : '10 entered by the user'
+                    }
+                })
+             //dispatching event
+            document.dispatchEvent(myEvent);
+            }
+             //listening the event and retrving the data 
+             document.addEventListener('eventten', (event)=>{
+                console.log('message printed from addEventLister beacuse event fired : '+event.detail.message);
+            });
+        }
+//============================================================================================
+    </script>
+</body>
+</html>
