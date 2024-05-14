@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showPromise(number){
+          return new Promise((resolve , reject)=>{
+            if(number===100){
+                resolve('boolean value True');
+            }else{
+                reject('boolean value false');
+            }
+          })
+        }
+
+        showPromise(10).then((result)=>{
+            console.log(result);
+        }).catch((result)=>{
+            console.log(result);
+        })
+
+
+        function checkLoginStatus() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    // Simulating async operation like fetching user status
+                    const userLoggedIn = false; // change this to true to see the other path
+        
+                    if (userLoggedIn) {
+                        resolve("User is logged in"); // resolve the promise with this value
+                    } else {
+                        reject("User is not logged in"); // reject the promise with this error
+                    }
+                }, 1000); // Simulating network delay
+            });
+        }
+        
+        checkLoginStatus()
+            .then(message => {
+                console.log(message); // handle success
+            })
+            .catch(error => {
+                console.error(error); // handle error
+            });
+        
+
+            function loginUser(email, password) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        console.log("User logged in");
+                        resolve({ userEmail: email });
+                    }, 1500);
+                });
+            }
+            
+            function getUserVideos(email) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve(["video1", "video2", "video3"]);
+                    }, 1000);
+                });
+            }
+            
+            function videoDetails(video) {
+                return new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("title of the video");
+                    }, 800);
+                });
+            }
+            
+            loginUser("email@example.com", "123456")
+                .then(user => getUserVideos(user.userEmail))
+                .then(videos => videoDetails(videos[0]))
+                .then(detail => console.log(detail));
+            
+    </script>
+</body>
+</html>
