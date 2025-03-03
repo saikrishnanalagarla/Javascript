@@ -165,6 +165,13 @@
     <sharingModel>ReadWrite</sharingModel>
     <visibility>Public</visibility>
     <fields>
+        <fullName>Field_Emo__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Field Emo</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
         <fullName>Field_One__c</fullName>
         <defaultValue>false</defaultValue>
         <label>Field One</label>
