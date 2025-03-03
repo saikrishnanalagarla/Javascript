@@ -207,6 +207,7 @@
         <type>Email</type>
         <unique>false</unique>
     </fields>
+    
     <validationRules>
         <fullName>DemoValidationRuleOne</fullName>
         <active>true</active>
